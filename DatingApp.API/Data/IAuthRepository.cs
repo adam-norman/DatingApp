@@ -10,7 +10,7 @@ namespace DatingApp.API.Data
    public interface IAuthRepository
     {
         Task<User> Register(User user, string password);
-        Task<User> Login(UserForRegisterDto userdata);
+        Task<User> Login(UserForLoginDto userObj);
         Task<bool> UserExist(string username);
     }
 }
