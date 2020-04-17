@@ -44,13 +44,14 @@ namespace DatingApp.API.Controllers
             await _repo.Register(NewUser, userObj.Password);
             return StatusCode(201);
         }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userObj)
         {
             var userFormRepo = await _repo.Login(userObj);
             if (userFormRepo == null)
             {
-                return Unauthorized();
+                return StatusCode(401, "Unauthorized user access");
             }
             var claims = new[]
             {
@@ -73,6 +74,8 @@ namespace DatingApp.API.Controllers
                     token = tokenHandler.WriteToken(token)
                 }
                 );
+
+
         }
     }
 }

@@ -19,7 +19,7 @@ isloggedIn=false;
       console.log('successful login');
     }
     ,error=>{
-      console.log('failed to login');
+      console.log(error);
     }
     )
   }
