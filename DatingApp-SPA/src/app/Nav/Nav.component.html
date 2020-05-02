@@ -26,11 +26,13 @@
         <a class="dropdown-item" (click)="logOut()"><i class="fa fa-sign-out"></i>Logout</a>
       </div>
     </div>
-    <form #loginForm="ngForm"  *ngIf="!loggedIn()" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+    
+    <form #loginForm="ngForm"  *ngIf="!loggedIn()" (ngSubmit)="login()" class="form-inline my-2 mr-2">
       <input class="form-control mr-sm-2" required type="text" placeholder="Username" name="username" [(ngModel)]="model.username">
       <input class="form-control mr-sm-2" required type="password" placeholder="Password" name="password" [(ngModel)]="model.password" >
       <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
     </form>
+  
   </div>
 </div>
 </nav>
