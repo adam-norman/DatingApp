@@ -4,6 +4,5 @@
 }
 .dropdown-item{ 
     cursor: pointer;
-    right: auto !important;
-    left: auto !important;
 }
+

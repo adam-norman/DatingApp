@@ -55,8 +55,8 @@ namespace DatingApp.API.Controllers
             }
             var claims = new[]
             {
-               new Claim( "UserID",userFormRepo.Id.ToString()),
-               new Claim( "UserName",userFormRepo.UserName)
+               new Claim( ClaimTypes.NameIdentifier,userFormRepo.Id.ToString()),
+               new Claim( ClaimTypes.Name,userFormRepo.UserName)
            };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);

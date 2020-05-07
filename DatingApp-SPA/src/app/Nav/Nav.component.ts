@@ -21,7 +21,7 @@ isloggedIn=false;
       this.alertify.success('successful login');
     }
     ,error=>{
-      console.log(error);
+      this.alertify.error(error);
     },
     ()=>{
       this.router.navigate(['/members']);
